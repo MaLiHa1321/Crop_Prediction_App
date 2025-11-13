@@ -1,0 +1,128 @@
+/* General body setup */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e3fdfd, #ffe6fa);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease-in-out infinite alternate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background: linear-gradient(135deg, #e3fdfd, #ffe6fa); }
+  100% { background: linear-gradient(135deg, #ffe6fa, #e3fdfd); }
+}
+
+/* Header styling */
+.login {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login h1 {
+  color: #333;
+  font-size: 30px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Form box */
+form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 720px;
+  width: 90%;
+  animation: fadeInUp 1.2s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Two-column input layout */
+form label {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+form input[type="text"] {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+form input[type="text"]:focus {
+  border-color: #66cc66;
+  box-shadow: 0 0 5px #66cc66;
+}
+
+/* Submit button */
+input[type="submit"] {
+display: block;
+  margin: 20px auto 0;
+  width: 60%;
+  text-align: center;
+  background: #66cc66;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  animation: glowPulse 2s infinite;
+}
+
+input[type="submit"]:hover {
+  background: #55aa55;
+  transform: scale(1.05);
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px #a8e6cf; }
+  50% { box-shadow: 0 0 20px #66cc66; }
+  100% { box-shadow: 0 0 5px #a8e6cf; }
+}
+
+/* Prediction text */
+#predict {
+  text-align: center;
+  color: #333;
+  font-size: 22px;
+  margin-top: 25px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  form label {
+    width: 100%;
+  }
+}

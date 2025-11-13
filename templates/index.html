@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop prediction App</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="login">
+        <h1>Crop prediction model</h1>
+   
+
+    </div>
+    <form action="{{url_for('predict')}}" method="POST">
+<label>Nitrogen: <input type="text" name="Nitrogen"  required></label><br>
+<label>Phosporash: <input type="text" name="Phosporash"  required></label><br>
+<label>Potassium: <input type="text" name="potassium"  required></label><br>
+<label>Temperature: <input type="text" step="any" name="temperature"  required></label><br>
+<label>Humidity: <input type="text" step="any" name="humidity" required></label><br>
+<label>pH: <input type="text" step="any" name="ph" required></label><br>
+<label>Rainfall: <input type="text" step="any" name="rainfall" required></label><br><br>
+<input type="submit" value="Predict">
+</form>
+
+<h1 id="predict">
+    {{prediction_txt}}
+</h1>
+</body>
+</body>
+</html>
