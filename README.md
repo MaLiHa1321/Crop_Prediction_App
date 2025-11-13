@@ -15,10 +15,10 @@ Check out the live version of the Crop Prediction App here:
 
 
 **Technology Used**
-Python
-Machine Learning
-Flask 
-HTML/CSS 
+- Python
+- Machine Learning
+- Flask 
+- HTML/CSS 
 
 **Usage**
 Enter the required parameters such as soil characteristics, weather conditions, and other relevant information.
