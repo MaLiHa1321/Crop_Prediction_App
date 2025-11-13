@@ -10,7 +10,9 @@ The Crop Prediction App is a web-based application that leverages machine learni
 ### Live Demo
 Check out the live version of the Crop Prediction App here:  
 
-[Crop_Prediction_App]((https://crop-prediction-app-1.onrender.com/))
+[![Live Demo](https://img.shields.io/badge/Live-App-blue)](https://crop-prediction-app-1.onrender.com/)
+
+
 
 **Technology Used**
 Python
