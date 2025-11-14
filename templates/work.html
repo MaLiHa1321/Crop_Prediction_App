@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works | CropPrediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>CropPrediction</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/how-it-works" class="active">How It Works</a>
+                <a href="#">Features</a>
+                <a href="/form">Prediction</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>How Our Crop Prediction System Works</h1>
+            <p>Discover the science behind our AI-powered agricultural recommendations</p>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-element">
+                <i class="fas fa-leaf" style="font-size: 40px; color: #a5d6a7;"></i>
+            </div>
+            <div class="floating-element">
+                <i class="fas fa-seedling" style="font-size: 35px; color: #c8e6c9;"></i>
+            </div>
+            <div class="floating-element">
+                <i class="fas fa-tint" style="font-size: 30px; color: #bbdefb;"></i>
+            </div>
+        </div>
+    </section>
+    <section class="process-section">
+        <div class="section-title">
+            <h2>The Prediction Process</h2>
+            <p>Four simple steps to get accurate crop recommendations</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3><i class="fas fa-clipboard-list step-icon"></i> Data Collection</h3>
+                    <p>Start by providing essential agricultural data about your farm's conditions and environment.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Soil nutrient levels (N, P, K)</li>
+                        <li><i class="fas fa-check"></i> Weather and climate data</li>
+                        <li><i class="fas fa-check"></i> Geographical location factors</li>
+                        <li><i class="fas fa-check"></i> Historical farming patterns</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3><i class="fas fa-database step-icon"></i> Data Processing</h3>
+                    <p>Our system analyzes and processes your input data using advanced algorithms.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Data validation and cleaning</li>
+                        <li><i class="fas fa-check"></i> Feature extraction and normalization</li>
+                        <li><i class="fas fa-check"></i> Pattern recognition analysis</li>
+                        <li><i class="fas fa-check"></i> Quality assurance checks</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3><i class="fas fa-robot step-icon"></i> AI Analysis</h3>
+                    <p>The Random Forest machine learning model processes the data to generate predictions.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Multiple decision tree analysis</li>
+                        <li><i class="fas fa-check"></i> Ensemble learning techniques</li>
+                        <li><i class="fas fa-check"></i> Probability calculations</li>
+                        <li><i class="fas fa-check"></i> Confidence scoring</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3><i class="fas fa-chart-line step-icon"></i> Recommendation Delivery</h3>
+                    <p>Receive personalized crop recommendations with detailed insights and explanations.</p>
+                    <ul class="step-features">
+                        <li><i class="fas fa-check"></i> Optimal crop suggestions</li>
+                        <li><i class="fas fa-check"></i> Success probability scores</li>
+                        <li><i class="fas fa-check"></i> Alternative options</li>
+                        <li><i class="fas fa-check"></i> Implementation guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ml-section">
+        <div class="ml-content">
+            <div class="ml-info">
+                <h2>Powered by Advanced Machine Learning</h2>
+                <p>Our system uses a sophisticated Random Forest Classifier trained on thousands of agricultural data points to deliver accurate crop predictions.</p>
+                <p>The model analyzes complex relationships between soil properties, weather conditions, and crop performance to provide reliable recommendations.</p>
+                
+                <ul class="ml-features">
+                    <li><i class="fas fa-brain"></i> Trained on 1000+ crop samples</li>
+                    <li><i class="fas fa-sliders-h"></i> 7 key agricultural parameters</li>
+                    <li><i class="fas fa-bolt"></i> Real-time prediction capability</li>
+                    <li><i class="fas fa-chart-bar"></i> 98%+ accuracy rate</li>
+                    <li><i class="fas fa-sync"></i> Continuous model improvement</li>
+                </ul>
+            </div>
+            
+            <div class="ml-visual">
+                <h3>Model Performance</h3>
+                <div style="background: var(--light-bg); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                    <i class="fas fa-project-diagram" style="font-size: 60px; color: var(--primary); margin-bottom: 15px;"></i>
+                    <p>Random Forest Algorithm</p>
+                </div>
+                
+                <div class="model-stats">
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Parameters</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">22</div>
+                        <div class="stat-label">Crop Types</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">&lt;1s</div>
+                        <div class="stat-label">Prediction Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Farming?</h2>
+            <p>Join thousands of farmers who are already using our AI system to make better crop decisions and increase their yields.</p>
+            <a href="/form" class="btn btn-large">Start Prediction Now</a>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>CropPrediction</h3>
+                <p>Revolutionizing agriculture through AI-powered insights and data-driven recommendations for farmers worldwide.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/how-it-works">How It Works</a></li>
+                    <li><a href="/form">Prediction</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+              <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> abc</li>
+                    <li><i class="fas fa-phone"></i> +880-123456789</li>
+                    <li><i class="fas fa-envelope"></i> abcCrop_prediction.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 Crop Prediction Analysis by Maliha <br>  Built for Farmers Worldwide
+        </div>
+    </footer>
+</body>
+</html>

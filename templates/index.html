@@ -1,32 +1,170 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crop prediction App</title>
-   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
+    <title>Crop Prediction Form | CropPrediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="login">
-        <h1>Crop prediction model</h1>
-   
 
+    <header>
+        <nav class="navbar">
+            <a href="{{ url_for('home') }}" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>CropPrediction</span>
+            </a>
+            <div class="nav-links">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('how_it_works') }}">How It Works</a>
+                <a href="#">Features</a>
+                <a href="#" class="active">Prediction</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="form-container">
+            <div class="form-header">
+                <div class="floating-elements">
+                    <div class="floating-element">
+                        <i class="fas fa-leaf" style="font-size: 40px; color: #a5d6a7;"></i>
+                    </div>
+                    <div class="floating-element">
+                        <i class="fas fa-seedling" style="font-size: 35px; color: #c8e6c9;"></i>
+                    </div>
+                    <div class="floating-element">
+                        <i class="fas fa-tint" style="font-size: 30px; color: #bbdefb;"></i>
+                    </div>
+                </div>
+                
+                <div class="form-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h1>Crop Prediction Analysis</h1>
+                <p>Enter your agricultural data to get AI-powered crop recommendations</p>
+            </div>
+
+            <div class="form-body">
+                <form action="{{ url_for('predict') }}" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="Nitrogen">
+                                <i class="fas fa-atom"></i> Nitrogen (N)
+                            </label>
+                            <input type="number" id="Nitrogen" name="Nitrogen" step="any" required placeholder="Enter nitrogen value">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Phosporash">
+                                <i class="fas fa-flask"></i> Phosphorus (P)
+                            </label>
+                            <input type="number" id="Phosporash" name="Phosporash" step="any" required placeholder="Enter phosphorus value">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="potassium">
+                                <i class="fas fa-bolt"></i> Potassium (K)
+                            </label>
+                            <input type="number" id="potassium" name="potassium" step="any" required placeholder="Enter potassium value">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="temperature">
+                                <i class="fas fa-thermometer-half"></i> Temperature (°C)
+                            </label>
+                            <input type="number" id="temperature" name="temperature" step="any" required placeholder="Enter temperature">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="humidity">
+                                <i class="fas fa-tint"></i> Humidity (%)
+                            </label>
+                            <input type="number" id="humidity" name="humidity" step="any" required placeholder="Enter humidity percentage">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ph">
+                                <i class="fas fa-vial"></i> pH Level
+                            </label>
+                            <input type="number" id="ph" name="ph" step="any" required placeholder="Enter pH value">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rainfall">
+                                <i class="fas fa-cloud-rain"></i> Rainfall (mm)
+                            </label>
+                            <input type="number" id="rainfall" name="rainfall" step="any" required placeholder="Enter rainfall in mm">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-robot"></i> Predict Optimal Crop
+                    </button>
+                </form>
+                {% if prediction_txt %}
+                <div class="prediction-result">
+                    <h2>AI Prediction Result</h2>
+                    <div class="prediction-text">
+                        {{ prediction_txt }}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
-    <form action="{{url_for('predict')}}" method="POST">
-<label>Nitrogen: <input type="text" name="Nitrogen"  required></label><br>
-<label>Phosporash: <input type="text" name="Phosporash"  required></label><br>
-<label>Potassium: <input type="text" name="potassium"  required></label><br>
-<label>Temperature: <input type="text" step="any" name="temperature"  required></label><br>
-<label>Humidity: <input type="text" step="any" name="humidity" required></label><br>
-<label>pH: <input type="text" step="any" name="ph" required></label><br>
-<label>Rainfall: <input type="text" step="any" name="rainfall" required></label><br><br>
-<input type="submit" value="Predict">
-</form>
 
-<h1 id="predict">
-    {{prediction_txt}}
-</h1>
-</body>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>CropPrediction</h3>
+                <p>Revolutionizing agriculture through AI-powered insights and data-driven recommendations for farmers worldwide.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <a href="/how-it-works">How It Works</a>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> abc</li>
+                    <li><i class="fas fa-phone"></i> +880-123456789</li>
+                    <li><i class="fas fa-envelope"></i> abcCrop_prediction.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 Crop Prediction Analysis by Maliha <br>  Built for Farmers Worldwide
+        </div>
+    </footer>
 </body>
 </html>

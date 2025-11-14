@@ -5,9 +5,19 @@ import pickle
 flask_app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
 
+
 @flask_app.route("/")
-def Home():
+def home():
+    return render_template("home.html")
+
+
+@flask_app.route("/form")
+def form_page():
     return render_template("index.html")
+
+@flask_app.route("/how-it-works")
+def how_it_works():
+    return render_template("work.html")
 
 @flask_app.route("/predict", methods=["POST"])
 def predict():

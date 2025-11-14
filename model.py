@@ -9,8 +9,8 @@ data = pd.read_csv(r"D:\Flask Project\crop_prediction\Crop_recommendation.csv")
 data.head(5)
 data.shape
 data.isnull().sum()
-x = data.iloc[:,:-1] #feature
-y = data.iloc[:,-1] #labels
+x = data.iloc[:,:-1] 
+y = data.iloc[:,-1] 
 
 X_train, X_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=42)
 X_train.head()
