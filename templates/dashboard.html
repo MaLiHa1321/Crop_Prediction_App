@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Crop Prediction App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>CropPrediction</span>
+            </a>
+     <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/form">Prediction</a>
+    <a href="/dashboard" class="active">Dashboard</a>
+    {% if session.name %}
+        <a href="/logout" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+    {% else %}
+        <a href="/login">Login</a>
+    {% endif %}
+</div>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <div class="floating-elements">
+                    <div class="floating-element">🌱</div>
+                    <div class="floating-element">🌾</div>
+                    <div class="floating-element">🍃</div>
+                </div>
+                
+                <div class="welcome-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h1>Welcome to Dashboard</h1>
+                <p>Manage your crop predictions and farming insights</p>
+                
+                {% if session.name %}
+                <div class="user-info">
+                    <h2>Hello, {{ session.name }}! 👋</h2>
+                    <p>Welcome back to your personalized dashboard</p>
+                </div>
+                {% else %}
+                <div class="user-info">
+                    <h2>Hello, Guest! 👋</h2>
+                    <p>Please login to access your personalized dashboard</p>
+                </div>
+                {% endif %}
+            </div>
+            <div class="dashboard-body">
+                {% if session.name %}
+                    <h2>Ready to Get Started?</h2>
+                    <p>Make new predictions, view your history, and optimize your farming decisions with AI-powered insights.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="/form" class="action-btn">
+                            <i class="fas fa-seedling"></i> New Prediction
+                        </a>
+                        <a href="/how-it-works" class="action-btn secondary">
+                            <i class="fas fa-info-circle"></i> How It Works
+                        </a>
+                    </div>
+                {% else %}
+                    <h2>Join Our Community</h2>
+                    <p>Create an account or login to start predicting crops and accessing your personalized dashboard.</p>
+                    
+                    <div class="action-buttons">
+                        <a href="/login" class="action-btn">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                        <a href="/register" class="action-btn secondary">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+   <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>CropPrediction</h3>
+        <p>Revolutionizing agriculture through AI-powered insights and data-driven recommendations for farmers worldwide.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      
+       <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> abc</li>
+                    <li><i class="fas fa-phone"></i> +880-123456789</li>
+                    <li><i class="fas fa-envelope"></i> abcCrop_prediction.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 Crop Prediction Analysis by Maliha <br>  Built for Farmers Worldwide
+        </div>
+  </footer>
+</body>
+</html>
