@@ -4,4 +4,6 @@ pandas
 scikit-learn
 gunicorn
 flask_pymongo
+reportlab
+
 
